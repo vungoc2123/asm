@@ -1,0 +1,56 @@
+<div class="container-fluid">
+    <div class="title row">
+        <div class="col-sm-3 text-center">
+            <h4>Name</h4>
+        </div>
+        <div class="col-sm-3 text-center">
+            <h4>Image</h4>
+        </div>
+        <div class="col-sm-2 text-center">
+            <h4>Email</h4>
+        </div>
+        <div class="col-sm-2 text-center">
+            <h4>Password</h4>
+        </div>
+        <div class="col-sm-2 text-center">
+            <h4>Action</h4>
+        </div>
+    </div>
+    {{#each listUsers}}
+    <form action="/actionUser" method="post">
+        <div class="item row border p-2 mb-2">
+            <div class="col-sm-3 text-center mt-2">
+                <input name="name" type="text" value={{name}} style="border: none;text-align: center; background: none;"
+                    readonly>
+            </div>
+            <div class="col-sm-3 text-center"><img class="img2" src="uploads/{{image}}"></div>
+            <div class="col-sm-2 text-center mt-2">
+                <input name="email" type="text" value={{email}}
+                    style="border: none;text-align: center; background: none;" readonly>
+            </div>
+            <div class="col-sm-2 text-center mt-2">
+                <input name="password" type="text" value={{password}}
+                    style="border: none;text-align: center; background: none;" readonly>
+            </div>
+            <div class="col-sm-2 text-center mt-2">
+                <button type="submit" value="update" name="update" class="btnUpdate btn-primary btn-edit">Edit</button>
+                <button type="submit" value="delete" name="delete" class="btnDelete btn-danger btn-delete">Delete</button>
+            </div>
+            <input name="image" type="text" value="uploads/{{image}}" style="display: none;" readonly>
+            <input name="id" type="text" value={{id}} style="display: none;" readonly>
+        </div>
+    </form>
+    {{/each}}
+</div>
+<style>
+    .img2 {
+        width: 80px;
+        height: 50px;
+    }
+
+    .title {
+        border: 2px solid #ccc;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+</style>

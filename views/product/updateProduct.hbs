@@ -1,0 +1,30 @@
+<form action="/addProduct" method="post" enctype="multipart/form-data">
+
+    <div class="form-group">
+        <label for="id">Mã sản phẩm:</label>
+        <input name="id" type="text" class="form-control" value={{product1.id}} readonly>
+    </div>
+    <div class="form-group">
+        <label for="name">Tên sản phẩm:</label>
+        <input type="text" class="form-control" id="name" name="name" value={{product1.name}} required />
+    </div>
+    <div class="form-group">
+        <label for="price">Giá:</label>
+        <input type="number" class="form-control" id="price" name="price" value={{product1.price}} required />
+    </div>
+    <div class="form-group">
+        <label for="color">Màu:</label>
+        <input type="text" class="form-control" id="color" name="color" value={{product1.color}} required />
+    </div>
+    <label class="mt-2" for="image">Ảnh sản phẩm:</label>
+    <div class="form-group mt-3">
+        <img id="image-preview" {{#if product1.image}} src={{product1.image}} {{/if}} width="150px" height="150px">
+        <input type="file" id="form3Example4" name="image" class="form-control mt-3" accept="image/*" required
+            onchange="previewImage(event)" />
+    </div>
+    <div class="form-group mt-3">
+        <button type="submit" class="btnAdd btn-primary">Tạo</button>
+        <button type="button" class="btnAdd btn-secondary" onclick="resetForm()">Hủy</button>
+    </div>
+
+</form>

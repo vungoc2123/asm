@@ -1,0 +1,41 @@
+<form action="/addUser" method="post" enctype="multipart/form-data">
+    <!-- 2 column grid layout with text inputs for the first and last names -->
+
+    <div class="form-outline">
+        <label class="form-label" for="form3Example1">Name</label>
+        <input type="text" id="form3Example1" name="name" class="form-control" value={{user1.name}} required/>
+
+    </div>
+
+
+
+    <!-- Email input -->
+    <div class="form-outline mb-4">
+        <label class="form-label" for="form3Example3">Email address</label>
+        <input type="email" id="form3Example3" name="email" class="form-control" value={{user1.email}} required/>
+
+    </div>
+
+    <!-- Password input -->
+    <div class="form-outline mb-4">
+        <label class="form-label" for="form3Example4">Password</label>
+        <input type="text" id="form3Example4" name="password" class="form-control" value={{user1.password}} required/>
+
+    </div>
+    <div>
+        <label class="form-label" for="form3Example4">Image</label>
+    </div>
+
+    <div class="form-outline mb-4">
+        <img id="image-preview" src={{user1.image}} width="150" height="150">
+        <input type="file" id="form3Example4" name="image" class="form-control mt-3" accept="image/*" required
+            onchange="previewImage(event)" />
+    </div>
+    <input name="id" type="text" value={{user1.id}} style="display: none;" readonly>
+
+
+    <!-- Submit button -->
+    <button type="submit" class="btnUpdateUser btn-primary btn-block mb-4">
+        Update
+    </button>
+</form>
